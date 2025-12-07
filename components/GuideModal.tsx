@@ -131,7 +131,7 @@ export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
               <section className="text-center pt-8 border-t border-white/5">
                 <h3 className="text-2xl font-bold text-white mb-4">Esternalizzare per dormire sonni tranquilli</h3>
                 <p className="max-w-2xl mx-auto mb-8">
-                  Gestire queste pratiche internamente toglie tempo al core business e aumenta i rischi di errore. Affidati a specialisti per la gestione burocratica completa.
+                  Gestire queste pratiche internamente toglie tempo al core business e aumenta i rischi di errore. Affidatevi al nostro team specializzato per una gestione completa.
                 </p>
                 <button onClick={onClose} className="bg-brand-500 text-dark-900 px-8 py-4 rounded-xl font-bold hover:bg-brand-400 transition-colors shadow-glow">
                   Richiedi Audit Gratuito

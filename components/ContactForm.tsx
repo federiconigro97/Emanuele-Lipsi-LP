@@ -8,7 +8,7 @@ export const ContactForm: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-900 to-transparent"></div>
       <div className="absolute -right-40 top-20 w-96 h-96 bg-brand-900/20 rounded-full blur-[100px]"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 relative z-10">
         <div className="grid lg:grid-cols-5 gap-12">
           
           {/* Contact Info Side */}
@@ -21,7 +21,7 @@ export const ContactForm: React.FC = () => {
             <div>
               <h2 className="text-4xl font-display font-bold text-white mb-4">Parliamone.</h2>
               <p className="text-slate-400 text-lg">
-                Non aspettare che arrivi la lettera delle Dogane. Mettiamoci in regola oggi stesso.
+                Non aspettate che arrivi la lettera delle Dogane. Mettiamo in regola la vostra azienda oggi stesso.
               </p>
             </div>
 
@@ -31,7 +31,7 @@ export const ContactForm: React.FC = () => {
                      <span className="material-symbols-outlined">call</span>
                   </div>
                   <div>
-                     <p className="text-xs text-slate-500 uppercase font-bold">Chiamami</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold">Chiamaci</p>
                      <p className="text-white font-mono">+39 333 123 4567</p>
                   </div>
                </div>
@@ -41,8 +41,8 @@ export const ContactForm: React.FC = () => {
                      <span className="material-symbols-outlined">mail</span>
                   </div>
                   <div>
-                     <p className="text-xs text-slate-500 uppercase font-bold">Scrivimi</p>
-                     <p className="text-white font-mono">info@emanuele.engineering</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold">Scrivici</p>
+                     <p className="text-white font-mono">info@gestionedoganefv.it</p>
                   </div>
                </div>
                
@@ -109,11 +109,11 @@ export const ContactForm: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">Come posso aiutarti?</label>
+                  <label className="text-sm font-medium text-slate-300">Come possiamo aiutarvi?</label>
                   <textarea 
                     rows={4} 
                     className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600 resize-none" 
-                    placeholder="Ho bisogno di verificare la mia posizione doganale..."
+                    placeholder="Abbiamo bisogno di verificare la nostra posizione doganale..."
                   ></textarea>
                 </div>
 

@@ -36,22 +36,24 @@ function App() {
     <div className="min-h-screen bg-dark-900 font-sans text-white selection:bg-brand-500 selection:text-dark-900">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16">
           <div className="flex justify-between h-20 items-center">
             <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="w-10 h-10 bg-gradient-to-br from-brand-500 to-orange-600 rounded-xl flex items-center justify-center font-bold text-dark-900 shadow-glow group-hover:scale-105 transition-transform">E</div>
-              <span className="font-display font-bold text-xl tracking-tight">Emanuele<span className="text-brand-500">.Engineering</span></span>
+              <div className="w-10 h-10 bg-gradient-to-br from-brand-500 to-orange-600 rounded-xl flex items-center justify-center font-bold text-dark-900 shadow-glow group-hover:scale-105 transition-transform">
+                <span className="material-symbols-outlined">description</span>
+              </div>
+              <span className="font-display font-bold text-xl tracking-tight">GestioneDogane<span className="text-brand-500">FV</span></span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#process" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Come Funziona</a>
-              <a href="#tools" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Risorse Free</a>
-              <a href="#about" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Chi Sono</a>
+              {/* <a href="#tools" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Risorse Free</a> */}
+              <a href="#about" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Chi Siamo</a>
               <a href="#faq" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">FAQ</a>
               <button 
                 onClick={scrollToContact}
                 className="bg-white/10 hover:bg-brand-500 hover:text-dark-900 text-white border border-white/10 px-5 py-2 rounded-lg font-bold transition-all text-sm backdrop-blur-sm"
               >
-                Contattami
+                Contattaci
               </button>
             </div>
           </div>
@@ -63,7 +65,7 @@ function App() {
         <Hero onCtaClick={scrollToContact} />
         <Ticker />
         <div id="process"><Features /></div>
-        <div id="tools"><LeadMagnet /></div>
+        {/* <div id="tools"><LeadMagnet /></div> */}
         <div id="about"><About /></div>
         <div id="faq"><FAQ /></div>
         <ContactForm />
@@ -71,15 +73,17 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-dark-950 text-slate-500 py-12 border-t border-white/5 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+        <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 grid md:grid-cols-4 gap-8">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4 text-white">
-              <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center font-bold text-dark-900">E</div>
-              <span className="font-bold text-xl tracking-tight">Emanuele<span className="text-brand-500">.Engineering</span></span>
+              <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center font-bold text-dark-900">
+                 <span className="material-symbols-outlined" style={{fontSize: '18px'}}>description</span>
+              </div>
+              <span className="font-bold text-xl tracking-tight">GestioneDogane<span className="text-brand-500">FV</span></span>
             </div>
             <p className="max-w-sm text-sm mb-6 leading-relaxed">
-              Consulenza ingegneristica verticalizzata per pratiche doganali fotovoltaico. 
-              L'unico servizio che unisce competenza tecnica ed empatia umana.
+              Offriamo consulenza ingegneristica verticalizzata per le pratiche doganali fotovoltaico. 
+              Siamo l'unico servizio integrato che si occupa dell'intera gestione burocratica, azzerando il rischio di sanzioni per la vostra azienda.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-500 hover:text-dark-900 transition-all">
@@ -95,7 +99,7 @@ function App() {
             <h4 className="text-white font-bold mb-4">Contatti Diretti</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
-                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>mail</span> info@emanuele.engineering
+                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>mail</span> info@gestionedoganefv.it
               </li>
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
                 <span className="material-symbols-outlined" style={{fontSize: '16px'}}>call</span> +39 333 000 0000
@@ -115,13 +119,13 @@ function App() {
           </div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/5 flex justify-between items-center">
-          <p className="text-xs">© 2024 Emanuele Solar Engineering. All rights reserved.</p>
+        <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 mt-12 pt-8 border-t border-white/5 flex justify-between items-center">
+          <p className="text-xs">© 2025 GestioneDoganeFV. All rights reserved.</p>
           
-          {/* Admin Trigger for Strategy Dashboard */}
+          {/* Admin Trigger for Strategy Dashboard - HIDDEN */}
           <button 
             onClick={() => setIsStrategyOpen(true)}
-            className="flex items-center gap-2 text-xs text-slate-600 hover:text-brand-500 transition-colors bg-dark-900 px-3 py-1 rounded-full border border-white/5 hover:border-brand-500/50"
+            className="hidden flex items-center gap-2 text-xs text-slate-600 hover:text-brand-500 transition-colors bg-dark-900 px-3 py-1 rounded-full border border-white/5 hover:border-brand-500/50"
           >
             <span className="material-symbols-outlined" style={{fontSize: '14px'}}>dashboard</span>
             Admin

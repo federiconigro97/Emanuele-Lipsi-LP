@@ -5,23 +5,23 @@ const steps = [
   {
     id: 1,
     title: "Analisi Licenza e Codice Ditta",
-    desc: "Verifico la tua Licenza di Esercizio (Accise) e la correttezza del Codice Ditta Dogane. Se hai un impianto non denunciato, pianifichiamo la regolarizzazione.",
+    desc: "Verifichiamo lo stato della tua Licenza di Esercizio (Accise) e la validità del Codice Ditta. Se l'impianto non è ancora denunciato, pianifichiamo subito la regolarizzazione.",
     icon: "manage_search",
     color: "text-blue-400",
     bg: "bg-blue-400/10"
   },
   {
     id: 2,
-    title: "Elaborazione Modello AD-1",
-    desc: "Preparo il Modello AD-1 e calcolo le imposte dovute. Mi occupo anche della vidimazione del registro di produzione fotovoltaico.",
+    title: "Compilazione Registro",
+    desc: "Recuperiamo le letture dai tuoi contatori e prepariamo il Registro di Produzione fotovoltaico, garantendone la corretta tenuta e la vidimazione annuale.",
     icon: "description",
     color: "text-brand-400",
     bg: "bg-brand-400/10"
   },
   {
     id: 3,
-    title: "Invio Telematico GUD",
-    desc: "Eseguo l'invio telematico della dichiarazione annuale accise tramite il portale STD Agenzia Dogane. Ricevi la ricevuta ufficiale in 24h.",
+    title: "Invio Telematico Dichiarazione",
+    desc: "Gestiamo l'invio telematico della Dichiarazione Annuale di Consumo sul portale dell'Agenzia delle Dogane. Ricevi la ricevuta ufficiale di protocollo in 24 ore.",
     icon: "send",
     color: "text-green-400",
     bg: "bg-green-400/10"
@@ -31,9 +31,9 @@ const steps = [
 export const Features: React.FC = () => {
   return (
     <section className="py-24 bg-dark-900 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,8 +89,9 @@ export const Features: React.FC = () => {
            <div className="flex-1">
               <h3 className="text-2xl font-bold text-white mb-2">Sanzioni Dogane Fotovoltaico: Il rischio è reale</h3>
               <p className="text-slate-300">
-                La <strong>mancata dichiarazione consumo energia</strong> comporta sanzioni amministrative pesanti e accertamenti fiscali.
-                Hai un impianto non denunciato? Richiedi subito una <strong>regolarizzazione impianto fotovoltaico</strong> per evitare il peggio.
+                La <strong>mancata dichiarazione di consumo</strong> comporta pesanti sanzioni amministrative e accertamenti fiscali.
+                Hai un impianto non denunciato? Richiedi subito una <strong>regolarizzazione</strong> per evitare multe oltre i 3.000€, più il recupero delle accise e degli interessi.
+                Ti ricordiamo in anticipo tutte le scadenze fiscali per non sbagliare mai.
                 <span className="block mt-2 text-red-400 font-medium">Il costo della consulenza è una frazione della sanzione.</span>
               </p>
            </div>

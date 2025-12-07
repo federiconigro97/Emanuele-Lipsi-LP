@@ -19,13 +19,18 @@ export const generateSeoContent = async (
     
     const prompt = `
       Agisci come un esperto di SEO e Copywriting per il settore fotovoltaico B2B.
-      Stai assistendo Emanuele, un consulente ingegnere specializzato in pratiche doganali per impianti >20kW.
-      Il tono di voce deve essere: Autorevole ma accessibile, chiaro, solare ("l'ingegnere dal volto umano").
+      Stai scrivendo per conto di "GestioneDoganeFV", un team di ingegneri specializzati in pratiche doganali per impianti >20kW.
+      
+      Il tono di voce deve essere:
+      - Plurale ("Noi", "Il nostro team")
+      - Autorevole ma accessibile
+      - Chiaro e diretto
+      - Solare ma rigoroso ("Ingegneri dal volto umano")
 
       Genera una struttura (outline) dettagliata per un contenuto di tipo: ${type}.
       Keyword focus: "${keyword}".
 
-      Il contenuto deve convincere il lettore (titolare di azienda) a delegare la burocrazia a Emanuele.
+      Il contenuto deve convincere il lettore (titolare di azienda) a delegare la burocrazia al nostro team per evitare sanzioni.
       Usa formattazione Markdown.
     `;
 
