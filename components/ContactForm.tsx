@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const ContactForm: React.FC = () => {
   return (
-    <section id="contact" className="py-24 bg-dark-950 relative overflow-hidden">
+    <section className="py-24 bg-dark-950 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-900 to-transparent"></div>
       <div className="absolute -right-40 top-20 w-96 h-96 bg-brand-900/20 rounded-full blur-[100px]"></div>
@@ -32,7 +32,7 @@ export const ContactForm: React.FC = () => {
                   </div>
                   <div>
                      <p className="text-xs text-slate-500 uppercase font-bold">Chiamaci</p>
-                     <p className="text-white font-mono">+39 333 123 4567</p>
+                     <p className="text-white font-mono">+39 327 941 7550</p>
                   </div>
                </div>
 

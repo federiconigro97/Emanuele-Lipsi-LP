@@ -36,7 +36,7 @@ export const FAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-dark-800" id="faq">
+    <section className="py-24 bg-dark-800">
       {/* Updated outer container to match the wider layout of other sections */}
       <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">

@@ -25,10 +25,19 @@ const Ticker = () => (
 function App() {
   const [isStrategyOpen, setIsStrategyOpen] = useState(false);
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
+  // Smooth scroll handler with offset for fixed header
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 100; // Height of header + breathing room
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -38,19 +47,37 @@ function App() {
       <nav className="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
         <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16">
           <div className="flex justify-between h-20 items-center">
-            <div className="flex items-center gap-2 group cursor-pointer">
+            <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <div className="w-10 h-10 bg-gradient-to-br from-brand-500 to-orange-600 rounded-xl flex items-center justify-center font-bold text-dark-900 shadow-glow group-hover:scale-105 transition-transform">
                 <span className="material-symbols-outlined">description</span>
               </div>
               <span className="font-display font-bold text-xl tracking-tight">DichiarazioneDi<span className="text-brand-500">Consumo</span></span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#process" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Come Funziona</a>
-              {/* <a href="#tools" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Risorse Free</a> */}
-              <a href="#about" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Chi Siamo</a>
-              <a href="#faq" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">FAQ</a>
+              <a 
+                href="#process" 
+                onClick={(e) => scrollToSection(e, 'process')}
+                className="text-sm text-slate-300 hover:text-white transition-colors font-medium"
+              >
+                Come Funziona
+              </a>
+              {/* <a href="#tools" onClick={(e) => scrollToSection(e, 'tools')} className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Risorse Free</a> */}
+              <a 
+                href="#about" 
+                onClick={(e) => scrollToSection(e, 'about')}
+                className="text-sm text-slate-300 hover:text-white transition-colors font-medium"
+              >
+                Chi Siamo
+              </a>
+              <a 
+                href="#faq" 
+                onClick={(e) => scrollToSection(e, 'faq')}
+                className="text-sm text-slate-300 hover:text-white transition-colors font-medium"
+              >
+                FAQ
+              </a>
               <button 
-                onClick={scrollToContact}
+                onClick={(e) => scrollToSection(e, 'contact')}
                 className="bg-white/10 hover:bg-brand-500 hover:text-dark-900 text-white border border-white/10 px-5 py-2 rounded-lg font-bold transition-all text-sm backdrop-blur-sm"
               >
                 Contattaci
@@ -62,13 +89,27 @@ function App() {
 
       {/* Main Content */}
       <main>
-        <Hero onCtaClick={scrollToContact} />
+        <Hero onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} />
         <Ticker />
-        <div id="process"><Features /></div>
-        {/* <div id="tools"><LeadMagnet /></div> */}
-        <div id="about"><About /></div>
-        <div id="faq"><FAQ /></div>
-        <ContactForm />
+        
+        {/* Sections with IDs for Navigation and scroll-mt (scroll-margin-top) for offset */}
+        <div id="process" className="scroll-mt-24">
+          <Features />
+        </div>
+        
+        {/* <div id="tools" className="scroll-mt-24"><LeadMagnet /></div> */}
+        
+        <div id="about" className="scroll-mt-24">
+          <About />
+        </div>
+        
+        <div id="faq" className="scroll-mt-24">
+          <FAQ />
+        </div>
+        
+        <div id="contact" className="scroll-mt-24">
+          <ContactForm />
+        </div>
       </main>
 
       {/* Footer */}
@@ -94,10 +135,10 @@ function App() {
                 <span className="material-symbols-outlined" style={{fontSize: '16px'}}>mail</span> infodichiarazioneadm@gmail.com
               </li>
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
-                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>call</span> +39 333 000 0000
+                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>call</span> +39 327 941 7550
               </li>
-              <li className="opacity-60">P.IVA: IT12345678901</li>
-              <li className="opacity-60">Milano • Operativo in tutta Italia</li>
+              <li className="opacity-60">P.IVA: IT04512350713</li>
+              <li className="opacity-60">Operativo in tutta Italia</li>
             </ul>
           </div>
 
@@ -106,7 +147,16 @@ function App() {
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-brand-400 transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-brand-400 transition-colors">Cookie Policy</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Portale Dogane</a></li>
+              <li>
+                <a 
+                  href="https://www.adm.gov.it/portale/home" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-brand-400 transition-colors flex items-center gap-1"
+                >
+                  Portale Dogane <span className="material-symbols-outlined" style={{fontSize: '14px'}}>open_in_new</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
