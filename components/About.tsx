@@ -17,12 +17,7 @@ export const About: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                <div className="bg-slate-800 h-[500px] w-full relative flex items-end">
                   <img 
-                    src="/antonio-palermo.jpg" 
-                    onError={(e) => {
-                      // Fallback automatico se l'immagine locale non viene trovata
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop";
-                      e.currentTarget.onerror = null; // Previene loop infiniti
-                    }}
+                    src="./antonio-palermo.jpg" 
                     alt="Antonio Palermo" 
                     className="absolute inset-0 w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                   />
