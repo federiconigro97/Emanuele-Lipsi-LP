@@ -74,7 +74,7 @@ export const About: React.FC = () => {
                             <span className="material-symbols-outlined text-blue-200 group-hover:text-white transition-colors" style={{fontSize: '24px'}}>public</span>
                         </div>
                         <div className="flex flex-col pr-2">
-                            <span className="text-white font-bold text-sm leading-tight">Parliamone <br/>su LinkedIn</span>
+                            <span className="text-white font-bold text-sm leading-tight">Parliamone su LinkedIn</span>
                         </div>
                     </div>
                 </a>

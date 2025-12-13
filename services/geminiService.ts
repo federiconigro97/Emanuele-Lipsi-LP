@@ -1,8 +1,13 @@
 import { GoogleGenAI } from "@google/genai";
 
 const getClient = () => {
-  const apiKey = process.env.API_KEY;
+  // Safety check for process.env
+  const apiKey = (typeof process !== 'undefined' && process.env) ? process.env.API_KEY : '';
+  
   if (!apiKey) {
+    // In production/sandbox, we might want to handle this gracefully or throw.
+    // Throwing helps debug, but can cause Script Error if uncaught.
+    // For now, we return null or throw.
     throw new Error("API Key not found in environment variables");
   }
   return new GoogleGenAI({ apiKey });

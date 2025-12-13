@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export const ContactForm: React.FC = () => {
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!privacyAccepted) {
+      alert("È necessario accettare l'informativa sulla privacy per procedere.");
+      return;
+    }
+    // Handle submission logic here
+    console.log("Form submitted");
+  };
+
   return (
     <section className="py-24 bg-dark-950 relative overflow-hidden">
       {/* Background Decoration */}
@@ -68,12 +80,13 @@ export const ContactForm: React.FC = () => {
             <div className="glass-card p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-orange-600"></div>
               
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-300">Nome Completo</label>
                     <input 
                       type="text" 
+                      required
                       className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600" 
                       placeholder="Mario Rossi" 
                     />
@@ -82,6 +95,7 @@ export const ContactForm: React.FC = () => {
                     <label className="text-sm font-medium text-slate-300">Azienda</label>
                     <input 
                       type="text" 
+                      required
                       className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600" 
                       placeholder="Rossi SRL" 
                     />
@@ -93,6 +107,7 @@ export const ContactForm: React.FC = () => {
                     <label className="text-sm font-medium text-slate-300">Email</label>
                     <input 
                       type="email" 
+                      required
                       className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600" 
                       placeholder="mario@azienda.it" 
                     />
@@ -117,7 +132,30 @@ export const ContactForm: React.FC = () => {
                   ></textarea>
                 </div>
 
-                <button className="w-full bg-brand-500 hover:bg-brand-400 text-dark-950 font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(255,193,7,0.3)] hover:shadow-[0_0_30px_rgba(255,193,7,0.5)] transition-all flex items-center justify-center gap-2 group transform hover:-translate-y-1">
+                {/* GDPR Consent Checkbox */}
+                <div className="flex items-start gap-3 pt-2">
+                  <div className="relative flex items-center">
+                    <input
+                      id="privacy-consent"
+                      name="privacy-consent"
+                      type="checkbox"
+                      required
+                      checked={privacyAccepted}
+                      onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                      className="h-5 w-5 rounded border-white/10 bg-dark-900/50 text-brand-500 focus:ring-brand-500 focus:ring-offset-dark-900 cursor-pointer accent-brand-500"
+                    />
+                  </div>
+                  <div className="text-sm leading-tight">
+                    <label htmlFor="privacy-consent" className="font-medium text-slate-400 cursor-pointer select-none">
+                      Ho letto l'informativa e acconsento al trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).
+                    </label>
+                  </div>
+                </div>
+
+                <button 
+                  type="submit"
+                  className="w-full bg-brand-500 hover:bg-brand-400 text-dark-950 font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(255,193,7,0.3)] hover:shadow-[0_0_30px_rgba(255,193,7,0.5)] transition-all flex items-center justify-center gap-2 group transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   Richiedi Analisi Gratuita
                   <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
                 </button>

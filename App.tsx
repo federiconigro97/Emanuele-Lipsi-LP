@@ -6,6 +6,7 @@ import { ContactForm } from './components/ContactForm';
 import { StrategyDashboard } from './components/StrategyDashboard';
 import { FAQ } from './components/FAQ';
 import { LeadMagnet } from './components/LeadMagnet';
+import { LegalModal } from './components/LegalModal';
 
 // Simple Ticker Component for Social Proof
 const Ticker = () => (
@@ -24,6 +25,8 @@ const Ticker = () => (
 
 function App() {
   const [isStrategyOpen, setIsStrategyOpen] = useState(false);
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
+  const [legalTab, setLegalTab] = useState<'privacy' | 'cookie'>('privacy');
 
   // Smooth scroll handler with offset for fixed header
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, id: string) => {
@@ -39,6 +42,11 @@ function App() {
         behavior: "smooth"
       });
     }
+  };
+
+  const openLegal = (tab: 'privacy' | 'cookie') => {
+    setLegalTab(tab);
+    setIsLegalOpen(true);
   };
 
   return (
@@ -129,24 +137,42 @@ function App() {
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-4">Contatti Diretti</h4>
+            <h4 className="text-white font-bold mb-4">Dati Aziendali & Contatti</h4>
             <ul className="space-y-3 text-sm">
+              <li className="text-white font-bold">DI FILIPPO ANGELO</li>
+              <li className="flex items-start gap-3 opacity-80">
+                <span className="material-symbols-outlined mt-1" style={{fontSize: '16px'}}>location_on</span>
+                <span>Piazza Imperiale 5<br/>71010 Poggio Imperiale (FG)</span>
+              </li>
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
                 <span className="material-symbols-outlined" style={{fontSize: '16px'}}>mail</span> infodichiarazioneadm@gmail.com
+              </li>
+               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
+                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>verified_user</span> angelodifilippo@pec.it
               </li>
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
                 <span className="material-symbols-outlined" style={{fontSize: '16px'}}>call</span> +39 327 941 7550
               </li>
-              <li className="opacity-60">P.IVA: IT04512350713</li>
-              <li className="opacity-60">Operativo in tutta Italia</li>
+              <li className="opacity-60 text-xs mt-2 pt-2 border-t border-white/5">
+                P.IVA 04054050713<br/>
+                C.F. DFLNGL*****H926Z
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-4">Legal & Link</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Cookie Policy</a></li>
+              <li>
+                <button onClick={() => openLegal('privacy')} className="hover:text-brand-400 transition-colors text-left">
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button onClick={() => openLegal('cookie')} className="hover:text-brand-400 transition-colors text-left">
+                  Cookie Policy
+                </button>
+              </li>
               <li>
                 <a 
                   href="https://www.adm.gov.it/portale/home" 
@@ -161,8 +187,11 @@ function App() {
           </div>
         </div>
         
-        <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 mt-12 pt-8 border-t border-white/5 flex justify-between items-center">
+        <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs">© 2025 DichiarazioneDiConsumo. All rights reserved.</p>
+          <div className="text-xs opacity-50 text-center md:text-right">
+             <p>Sede Legale: Piazza Imperiale 5, 71010 Poggio Imperiale (FG)</p>
+          </div>
           
           {/* Admin Trigger for Strategy Dashboard - HIDDEN */}
           <button 
@@ -177,6 +206,7 @@ function App() {
 
       {/* Modals */}
       <StrategyDashboard isOpen={isStrategyOpen} onClose={() => setIsStrategyOpen(false)} />
+      <LegalModal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} initialTab={legalTab} />
       
       {/* Global CSS for scrolling ticker */}
       <style>{`
