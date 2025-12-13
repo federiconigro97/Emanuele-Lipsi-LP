@@ -42,7 +42,7 @@ export const StrategyDashboard: React.FC<StrategyDashboardProps> = ({ isOpen, on
             {/* Header */}
             <div className="p-6 border-b border-slate-200 flex justify-between items-center bg-slate-50">
               <div>
-                <h2 className="text-2xl font-bold text-slate-900">Strategia: Emanuele Solar Consulting</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Strategia: Antonio Palermo & Team</h2>
                 <p className="text-slate-500 text-sm">Analisi di mercato, ICP e Strumenti Operativi</p>
               </div>
               <button onClick={onClose} className="p-2 hover:bg-slate-200 rounded-full transition-colors flex items-center justify-center">
@@ -105,10 +105,10 @@ export const StrategyDashboard: React.FC<StrategyDashboardProps> = ({ isOpen, on
                       </div>
                     </div>
                     <div className="p-6 bg-green-50 rounded-xl border border-green-100">
-                        <h4 className="font-bold text-green-800 mb-2">L'Opportunità per Emanuele</h4>
+                        <h4 className="font-bold text-green-800 mb-2">L'Opportunità per Antonio</h4>
                         <p className="text-sm text-green-900">
                           C'è un vuoto di mercato per una figura <strong>iper-specializzata</strong> e <strong>agile</strong>. 
-                          Il cliente vuole solo togliersi il pensiero ed evitare multe. Emanuele vince su velocità e contatto umano.
+                          Il cliente vuole solo togliersi il pensiero ed evitare multe. Antonio vince su velocità e contatto umano.
                         </p>
                     </div>
                   </div>

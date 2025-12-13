@@ -42,7 +42,7 @@ function App() {
               <div className="w-10 h-10 bg-gradient-to-br from-brand-500 to-orange-600 rounded-xl flex items-center justify-center font-bold text-dark-900 shadow-glow group-hover:scale-105 transition-transform">
                 <span className="material-symbols-outlined">description</span>
               </div>
-              <span className="font-display font-bold text-xl tracking-tight">GestioneDogane<span className="text-brand-500">FV</span></span>
+              <span className="font-display font-bold text-xl tracking-tight">DichiarazioneDi<span className="text-brand-500">Consumo</span></span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#process" className="text-sm text-slate-300 hover:text-white transition-colors font-medium">Come Funziona</a>
@@ -79,27 +79,19 @@ function App() {
               <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center font-bold text-dark-900">
                  <span className="material-symbols-outlined" style={{fontSize: '18px'}}>description</span>
               </div>
-              <span className="font-bold text-xl tracking-tight">GestioneDogane<span className="text-brand-500">FV</span></span>
+              <span className="font-bold text-xl tracking-tight">DichiarazioneDi<span className="text-brand-500">Consumo</span></span>
             </div>
             <p className="max-w-sm text-sm mb-6 leading-relaxed">
               Offriamo consulenza ingegneristica verticalizzata per le pratiche doganali fotovoltaico. 
               Siamo l'unico servizio integrato che si occupa dell'intera gestione burocratica, azzerando il rischio di sanzioni per la vostra azienda.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-500 hover:text-dark-900 transition-all">
-                 <span className="material-symbols-outlined" style={{fontSize: '18px'}}>public</span>
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-500 hover:text-dark-900 transition-all">
-                <span className="material-symbols-outlined" style={{fontSize: '18px'}}>share</span>
-              </a>
-            </div>
           </div>
           
           <div>
             <h4 className="text-white font-bold mb-4">Contatti Diretti</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
-                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>mail</span> info@gestionedoganefv.it
+                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>mail</span> infodichiarazioneadm@gmail.com
               </li>
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
                 <span className="material-symbols-outlined" style={{fontSize: '16px'}}>call</span> +39 333 000 0000
@@ -120,7 +112,7 @@ function App() {
         </div>
         
         <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 mt-12 pt-8 border-t border-white/5 flex justify-between items-center">
-          <p className="text-xs">© 2025 GestioneDoganeFV. All rights reserved.</p>
+          <p className="text-xs">© 2025 DichiarazioneDiConsumo. All rights reserved.</p>
           
           {/* Admin Trigger for Strategy Dashboard - HIDDEN */}
           <button 

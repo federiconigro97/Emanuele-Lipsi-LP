@@ -42,7 +42,7 @@ export const ContactForm: React.FC = () => {
                   </div>
                   <div>
                      <p className="text-xs text-slate-500 uppercase font-bold">Scrivici</p>
-                     <p className="text-white font-mono">info@gestionedoganefv.it</p>
+                     <p className="text-white font-mono">infodichiarazioneadm@gmail.com</p>
                   </div>
                </div>
                

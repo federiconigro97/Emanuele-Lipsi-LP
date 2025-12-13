@@ -19,7 +19,7 @@ export const generateSeoContent = async (
     
     const prompt = `
       Agisci come un esperto di SEO e Copywriting per il settore fotovoltaico B2B.
-      Stai scrivendo per conto di "GestioneDoganeFV", un team di ingegneri specializzati in pratiche doganali per impianti >20kW.
+      Stai scrivendo per conto di "DichiarazioneDiConsumo", un team di ingegneri specializzati in pratiche doganali per impianti >20kW.
       
       Il tono di voce deve essere:
       - Plurale ("Noi", "Il nostro team")

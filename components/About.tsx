@@ -15,16 +15,16 @@ export const About: React.FC = () => {
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-brand-500 to-orange-600 rounded-2xl opacity-30 blur-xl animate-pulse"></div>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-               {/* Placeholder for Emanuele's photo - stylized */}
+               {/* Updated photo to local file as requested. Please ensure 'antonio-palermo.jpg' exists in your project root/public folder */}
                <div className="bg-slate-800 h-[500px] w-full relative flex items-end">
                   <img 
-                    src="https://images.unsplash.com/photo-1581092165309-2ab35320ca70?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
-                    alt="Emanuele" 
-                    className="absolute inset-0 w-full h-full object-cover"
+                    src="./antonio-palermo.jpg" 
+                    alt="Antonio Palermo" 
+                    className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
                   <div className="p-8 relative z-10">
-                     <p className="text-brand-400 font-display font-bold text-2xl">Ing. Emanuele & Team</p>
+                     <p className="text-brand-400 font-display font-bold text-2xl">Antonio Palermo & Team</p>
                      <p className="text-slate-400">Esperti Gestione Fiscale Impianti</p>
                   </div>
                </div>
@@ -67,16 +67,21 @@ export const About: React.FC = () => {
 
               <div className="p-6 bg-brand-500/5 border-l-4 border-brand-500 rounded-r-xl my-8">
                 <p className="text-white italic font-medium">
-                  "Il nostro obiettivo? Rendere la vostra azienda 'invisibile' al fisco. Una gestione così precisa che i controlli diventano una pura formalità. Voi producete energia, noi proteggiamo il vostro fatturato."
+                  "Il nostro obiettivo è essere il partner di fiducia per la vostra azienda. Voi producete energia, noi ci occupiamo di tutta la burocrazia e della gestione legale dell'impianto."
                 </p>
               </div>
             </div>
 
             <div className="flex gap-4 mt-8">
-              <button className="flex items-center gap-2 px-6 py-3 bg-blue-600/20 text-blue-400 border border-blue-500/30 rounded-lg hover:bg-blue-600/30 transition-all group">
+              <a 
+                href="https://www.linkedin.com/in/antonio-palermo-252177252?"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-blue-600/20 text-blue-400 border border-blue-500/30 rounded-lg hover:bg-blue-600/30 transition-all group"
+              >
                 <span className="material-symbols-outlined group-hover:scale-110 transition-transform" style={{ fontSize: '20px' }}>public</span>
                 <span>Parliamone su LinkedIn</span>
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
