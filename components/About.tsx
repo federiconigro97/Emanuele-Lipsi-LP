@@ -15,12 +15,16 @@ export const About: React.FC = () => {
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-brand-500 to-orange-600 rounded-2xl opacity-30 blur-xl animate-pulse"></div>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-               {/* Updated photo to local file as requested. Please ensure 'antonio-palermo.jpg' exists in your project root/public folder */}
                <div className="bg-slate-800 h-[500px] w-full relative flex items-end">
                   <img 
-                    src="./antonio-palermo.jpg" 
+                    src="/antonio-palermo.jpg" 
+                    onError={(e) => {
+                      // Fallback automatico se l'immagine locale non viene trovata
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop";
+                      e.currentTarget.onerror = null; // Previene loop infiniti
+                    }}
                     alt="Antonio Palermo" 
-                    className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="absolute inset-0 w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
                   <div className="p-8 relative z-10">
