@@ -65,10 +65,10 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, initial
                   
                   <section>
                     <h4 className="font-bold text-white mb-2">1. Titolare del Trattamento</h4>
-                    <p>Il titolare del trattamento dei dati è <strong>DI FILIPPO ANGELO</strong>.</p>
-                    <p>Sede Legale: Piazza Imperiale 5, 71010 Poggio Imperiale (FG)</p>
-                    <p>P.IVA: 04054050713 | C.F.: DFLNGL*****H926Z</p>
-                    <p>Contatto: infodichiarazioneadm@gmail.com | PEC: angelodifilippo@pec.it</p>
+                    <p>Il titolare del trattamento dei dati è <strong>PALERMO ANTONIO</strong>.</p>
+                    <p>Sede Legale: Via Caduti sul lavoro 26A, 71026 Deliceto (FG)</p>
+                    <p>P.IVA: IT04512350713 | C.F.: PL**********643V</p>
+                    <p>Contatto: infodichiarazioneadm@gmail.com | PEC: antonio.palermo.arch@pec.it</p>
                   </section>
 
                   <section>
@@ -110,7 +110,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, initial
                       <li>Chiederne la rettifica o la cancellazione.</li>
                       <li>Revocare il consenso.</li>
                     </ul>
-                    <p className="mt-2">Per esercitare tali diritti, inviare una mail a: infodichiarazioneadm@gmail.com o angelodifilippo@pec.it</p>
+                    <p className="mt-2">Per esercitare tali diritti, inviare una mail a: infodichiarazioneadm@gmail.com o antonio.palermo.arch@pec.it</p>
                   </section>
                 </div>
               )}

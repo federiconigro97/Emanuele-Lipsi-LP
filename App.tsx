@@ -139,23 +139,23 @@ function App() {
           <div>
             <h4 className="text-white font-bold mb-4">Dati Aziendali & Contatti</h4>
             <ul className="space-y-3 text-sm">
-              <li className="text-white font-bold">DI FILIPPO ANGELO</li>
+              <li className="text-white font-bold">PALERMO ANTONIO</li>
               <li className="flex items-start gap-3 opacity-80">
                 <span className="material-symbols-outlined mt-1" style={{fontSize: '16px'}}>location_on</span>
-                <span>Piazza Imperiale 5<br/>71010 Poggio Imperiale (FG)</span>
+                <span>Via Caduti sul lavoro 26A<br/>71026 Deliceto (FG)</span>
               </li>
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
                 <span className="material-symbols-outlined" style={{fontSize: '16px'}}>mail</span> infodichiarazioneadm@gmail.com
               </li>
                <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
-                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>verified_user</span> angelodifilippo@pec.it
+                <span className="material-symbols-outlined" style={{fontSize: '16px'}}>verified_user</span> antonio.palermo.arch@pec.it
               </li>
               <li className="flex items-center gap-3 hover:text-brand-400 transition-colors cursor-pointer">
                 <span className="material-symbols-outlined" style={{fontSize: '16px'}}>call</span> +39 327 941 7550
               </li>
               <li className="opacity-60 text-xs mt-2 pt-2 border-t border-white/5">
-                P.IVA 04054050713<br/>
-                C.F. DFLNGL*****H926Z
+                P.IVA IT04512350713<br/>
+                C.F. PL**********643V
               </li>
             </ul>
           </div>
@@ -190,7 +190,7 @@ function App() {
         <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-16 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs">© 2025 DichiarazioneDiConsumo. All rights reserved.</p>
           <div className="text-xs opacity-50 text-center md:text-right">
-             <p>Sede Legale: Piazza Imperiale 5, 71010 Poggio Imperiale (FG)</p>
+             <p>Sede Legale: Via Caduti sul lavoro 26A, 71026 Deliceto (FG)</p>
           </div>
           
           {/* Admin Trigger for Strategy Dashboard - HIDDEN */}
