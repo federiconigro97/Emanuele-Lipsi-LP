@@ -3,15 +3,46 @@ import { motion } from 'framer-motion';
 
 export const ContactForm: React.FC = () => {
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    power: '20 - 50 kW',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!privacyAccepted) {
       alert("È necessario accettare l'informativa sulla privacy per procedere.");
       return;
     }
-    // Handle submission logic here
-    console.log("Form submitted");
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', company: '', email: '', power: '20 - 50 kW', message: '' });
+        setPrivacyAccepted(false);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -87,6 +118,8 @@ export const ContactForm: React.FC = () => {
                     <input 
                       type="text" 
                       required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600" 
                       placeholder="Mario Rossi" 
                     />
@@ -96,6 +129,8 @@ export const ContactForm: React.FC = () => {
                     <input 
                       type="text" 
                       required
+                      value={formData.company}
+                      onChange={(e) => setFormData({...formData, company: e.target.value})}
                       className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600" 
                       placeholder="Rossi SRL" 
                     />
@@ -108,13 +143,19 @@ export const ContactForm: React.FC = () => {
                     <input 
                       type="email" 
                       required
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600" 
                       placeholder="mario@azienda.it" 
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-300">Potenza Impianto (kW)</label>
-                    <select className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all appearance-none cursor-pointer">
+                    <select 
+                      value={formData.power}
+                      onChange={(e) => setFormData({...formData, power: e.target.value})}
+                      className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+                    >
                       <option className="bg-dark-900">20 - 50 kW</option>
                       <option className="bg-dark-900">50 - 100 kW</option>
                       <option className="bg-dark-900">100 - 500 kW</option>
@@ -127,6 +168,8 @@ export const ContactForm: React.FC = () => {
                   <label className="text-sm font-medium text-slate-300">Come possiamo aiutarvi?</label>
                   <textarea 
                     rows={4} 
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full bg-dark-900/50 border border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600 resize-none" 
                     placeholder="Abbiamo bisogno di verificare la nostra posizione doganale..."
                   ></textarea>
@@ -152,12 +195,25 @@ export const ContactForm: React.FC = () => {
                   </div>
                 </div>
 
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-green-400 text-sm">
+                    Grazie! La tua richiesta è stata inviata con successo. Ti contatteremo presto.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-red-400 text-sm">
+                    Si è verificato un errore. Riprova più tardi o contattaci direttamente.
+                  </div>
+                )}
+
                 <button 
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-brand-500 hover:bg-brand-400 text-dark-950 font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(255,193,7,0.3)] hover:shadow-[0_0_30px_rgba(255,193,7,0.5)] transition-all flex items-center justify-center gap-2 group transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Richiedi Analisi Gratuita
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                  {isSubmitting ? 'Invio in corso...' : 'Richiedi Analisi Gratuita'}
+                  {!isSubmitting && <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>}
                 </button>
               </form>
             </div>
