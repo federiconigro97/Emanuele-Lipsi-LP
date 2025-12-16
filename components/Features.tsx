@@ -95,7 +95,10 @@ export const Features: React.FC = () => {
                 <span className="block mt-2 text-red-400 font-medium">Il costo della consulenza è una frazione della sanzione.</span>
               </p>
            </div>
-           <button className="px-6 py-3 bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 rounded-lg font-medium transition-colors whitespace-nowrap">
+           <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 py-3 bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 rounded-lg font-medium transition-colors whitespace-nowrap"
+           >
               Evita Sanzioni Dogane
            </button>
         </motion.div>
