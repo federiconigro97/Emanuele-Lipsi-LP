@@ -81,7 +81,7 @@ async function sendContactEmail(data: {
 
   const result = await client.emails.send({
     from: fromEmail,
-    to: 'federiconigro7@gmail.com',
+    to: 'infodichiarazioneadm@gmail.com',
     subject: `Nuova richiesta da ${data.name} - ${data.company}`,
     html: htmlContent,
     replyTo: data.email
