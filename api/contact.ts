@@ -52,7 +52,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     await resend.emails.send({
       from: 'Dichiarazione di Consumo <noreply@form.dichiarazionediconsumo.com>',
-      to: 'infodichiarazioneadm@gmail.com',
+      to: 'federiconigro7@gmail.com',
       subject: `Nuova richiesta da ${name} - ${company}`,
       html: htmlContent,
       replyTo: email
